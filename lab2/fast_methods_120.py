@@ -72,8 +72,8 @@ def test_M_most_sig(test_func):
 		x, M = test
 		act_k, act_ak = test_func(x, M)
 		exp_k, exp_ak = tests_expected[i]
-		if len(exp_k) != len(act_k) or np.linalg.norm(exp_k - act_k) > 1e-6 \
-            or len(exp_ak) != len(act_ak) or np.linalg.norm(exp_ak - act_ak) > 1e-6:
+		if len(exp_k) != len(act_k) or np.linalg.norm(np.sort(exp_k) - np.sort(act_k)) > 1e-6 \
+            or len(exp_ak) != len(act_ak) or np.linalg.norm(np.sort(exp_ak) - np.sort(act_ak)) > 1e-6:
 			print(f'Test{i+1} Failed.')
 			print(f'x = {x}')
 			print(f'M = {M}')
