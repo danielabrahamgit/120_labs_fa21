@@ -55,7 +55,7 @@ def test_M_most_sig(test_func):
 	x1 = np.array([0, 10, 12, 0])
 	x2 = np.array([1 -100j, 0.1 - 0.2j, 0, 0, 200j])
 	x3 = np.array([-12, -12, -12, 10, 10, 10])
-	tests = [(x1, 2), (x1, 1), (x2, 5), (x2, 7), (x2, 2), (x3, 3), (x3, 6), (x3, 2)]
+	tests = [(x1, 2), (x1, 1), (x2, 5), (x2, 7), (x2, 2), (x3, 3), (x3, 6)]
 	
 	tests_expected = [
 				(np.array([2, 1]), np.array([12, 10])),
@@ -64,8 +64,7 @@ def test_M_most_sig(test_func):
 				(np.array([4, 0, 1]), np.array([0. +200.j , 1. -100.j , 0.1  -0.2j])),
 				(np.array([4, 0]), np.array([0.+200.j, 1.-100.j])),
 				(np.array([0, 1, 2]), np.array([-12, -12, -12])),
-				(np.array([0, 1, 2, 3, 4, 5]), np.array([-12, -12, -12,  10,  10,  10])),
-				(np.array([0, 1]), np.array([-12, -12]))
+				(np.array([0, 1, 2, 3, 4, 5]), np.array([-12, -12, -12,  10,  10,  10]))
 	]
 	
 	for i, test in enumerate(tests):
